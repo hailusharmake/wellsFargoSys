@@ -1,0 +1,8 @@
+%dw 2.0
+
+type auto_8451899b_ea24_40c0_b5b5_532c7769d5da_Input_Payload = {|
+  accounts: Array<{|    bank_id: String,     account_number: String,     status: String,     account_type: String,     account_name: String,     currency_code: String,     balances: Array<{|      balance_type: String,       balance_amount: Number,       as_of_date: String,       bai_type_code: String    |}>
+  |}>
+|} {"mediaType": "application/json",
+"encoding": "UTF-8"}
+

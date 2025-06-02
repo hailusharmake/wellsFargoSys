@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+   <http:listener-config name="wellsfargosysapi-httpListenerConfig">
+        <http:listener-connection host="0.0.0.0" port="${http.listener.port}" />
+    </http:listener-config>
+	<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="55450eaa-18c0-4de8-bf94-8db887621669" basePath="/${http.request.basePath}" >
+		<http:request-connection host="${http.request.host}" protocol="HTTPS"/>
+	</http:request-config>
+	<configuration-properties doc:name="Configuration properties" doc:id="3059065a-0fcf-41d2-bd87-969178604a74" file="${env}.properties" />
+	<global-property doc:name="Global Property" doc:id="0bf7f9d4-b1c5-4bb7-b589-afaf635b7877" name="env" value="dev" />
+	<flow name="implementationFlow" doc:id="8451899b-ea24-40c0-b5b5-532c7769d5da" >
+		<logger level="INFO" doc:name="Logger" doc:id="53f7198c-1ba5-434a-a8b4-72e9edeb99b4" message="#[write(payload, 'application/json')]"/>
+		<http:request method="POST" doc:name="Request" doc:id="8f495ec0-86d6-4717-ae90-116d128b1b2c" config-ref="HTTP_Request_configuration" path="/balances/report">
+			<http:body><![CDATA[#[{
+    "as_of_date": "2025-05-14",
+    "accounts": [
+        {
+            "account_number": "1000000101",
+            "bank_id": "121000248"
+        },
+        {
+            "account_number": "1000000201",
+            "bank_id": "ZYBFCAT0C"
+        },
+        {
+            "account_number": "1000000801",
+            "bank_id": "ZYBFCAT3C"
+        }
+    ],
+    "balance_types": [
+        "CLOSING_LEDGER",
+        "CURRENT_AVAILABLE",
+        "CLOSING_COLLECTED",
+        "OPENING_AVAILABLE",
+        "CURRENT_LEDGER",
+        "OPENING_LEDGER",
+        "MTD_AVERAGE_COLLECTED_BALANCE",
+        "MTD_AVERAGE_CLOSING_COLLECTED_BALANCE"
+    ]
+}]]]></http:body>
+			<http:headers><![CDATA[#[{
+	"Authorization" : attributes.headers.Authorization,
+	"Content-Type" : attributes.headers."Content-Type",
+	"gateway-entity-id" : attributes.headers."gateway-entity-id",
+	"client-request-id" : attributes.headers."client-request-id"
+}]]]></http:headers>
+		</http:request>
+		<logger level="INFO" doc:name="Logger" doc:id="a7789699-1a09-43e4-969a-15878b4bd967" message='"WF API Error: #[payload]"'/>
+		<!-- [STUDIO:"accesToken"]<set-variable value="tf6zpQSu9qcpO6pDoL25REf2HCnD" doc:name="accesToken" doc:id="1d438c97-a678-48c4-88aa-a560943856e3" variableName="accesToken"/> [STUDIO] -->
+	</flow>
+</mule>

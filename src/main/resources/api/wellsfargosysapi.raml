@@ -1,0 +1,21 @@
+#%RAML 1.0
+title: wellsFargoSysApi
+version: 1.0.3
+description: securely retrieve and give
+
+types:
+  dataType: !include dataTypes/dataType.raml
+
+traits:
+  securedRequest: !include accountTraits/trait.raml
+
+
+/accounts:
+  get:
+    is: [securedRequest]
+    description: Retrieve a list of bank accounts with balances.
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include examples/jsonexample.json

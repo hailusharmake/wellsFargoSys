@@ -1,0 +1,22 @@
+#%RAML 1.0 Trait
+headers:
+  Authorization:
+    description: Access token for authorization (e.g., Bearer token)
+    type: string
+    required: true
+    example: "Bearer <your_token>"
+  Content-Type:
+    description: The content type of the request body
+    type: string
+    required: true
+    example: application/json
+  gateway-entity-id:
+    description: Your assigned gateway entity ID
+    type: string
+    required: true
+    example: "12345-entity-id"
+  client-request-id:
+    description: A unique client-side request ID for tracking
+    type: string
+    required: true
+    example: "abc123-req-id"

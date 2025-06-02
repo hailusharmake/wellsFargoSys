@@ -1,0 +1,106 @@
+{
+    "accounts": [
+        {
+            "bank_id": "121000248",
+            "account_number": "1000000101",
+            "status": "AUTHORIZED",
+            "account_type": "DEMAND_DEPOSIT",
+            "account_name": "SBX Securities",
+            "currency_code": "USD",
+            "balances": [
+                {
+                    "balance_type": "OPENING_AVAILABLE",
+                    "balance_amount": 110619.25,
+                    "as_of_date": "2025-05-14",
+                    "bai_type_code": "015"
+                },
+                {
+                    "balance_type": "CLOSING_COLLECTED",
+                    "balance_amount": 118006.75,
+                    "as_of_date": "2025-05-14",
+                    "bai_type_code": "045"
+                },
+                {
+                    "balance_type": "CURRENT_AVAILABLE",
+                    "balance_amount": 119006.15,
+                    "as_of_date": "2025-05-31",
+                    "bai_type_code": "060"
+                },
+                {
+                    "balance_type": "CLOSING_LEDGER",
+                    "balance_amount": 118006.75,
+                    "as_of_date": "2025-05-14",
+                    "bai_type_code": "015"
+                },
+                {
+                    "balance_type": "CURRENT_LEDGER",
+                    "balance_amount": 119006.15,
+                    "as_of_date": "2025-05-31",
+                    "bai_type_code": "030"
+                },
+                {
+                    "balance_type": "OPENING_LEDGER",
+                    "balance_amount": 110619.25,
+                    "as_of_date": "2025-05-14",
+                    "bai_type_code": "040"
+                },
+                {
+                    "balance_type": "MTD_AVERAGE_COLLECTED_BALANCE",
+                    "balance_amount": 119016.15,
+                    "as_of_date": "2025-05-14",
+                    "bai_type_code": "050"
+                },
+                {
+                    "balance_type": "MTD_AVERAGE_CLOSING_COLLECTED_BALANCE",
+                    "balance_amount": 119016.15,
+                    "as_of_date": "2025-05-14",
+                    "bai_type_code": "020"
+                }
+            ]
+        },
+        {
+            "bank_id": "ZYBFCAT0C",
+            "account_number": "1000000201",
+            "status": "AUTHORIZED",
+            "account_type": "DEMAND_DEPOSIT",
+            "account_name": "SBX Financials",
+            "currency_code": "USD",
+            "balances": [
+                {
+                    "balance_type": "CURRENT_AVAILABLE",
+                    "balance_amount": 222902.12,
+                    "as_of_date": "2025-05-31",
+                    "bai_type_code": "060"
+                },
+                {
+                    "balance_type": "CURRENT_LEDGER",
+                    "balance_amount": 227002.12,
+                    "as_of_date": "2025-05-31",
+                    "bai_type_code": "030"
+                }
+            ]
+        },
+        {
+            "bank_id": "ZYBFCAT3C",
+            "account_number": "1000000801",
+            "status": "AUTHORIZED",
+            "account_type": "DEMAND_DEPOSIT",
+            "account_name": "SBX Chx Cashing",
+            "currency_code": "USD",
+            "balances": [
+                {
+                    "balance_type": "CURRENT_AVAILABLE",
+                    "balance_amount": 882907.17,
+                    "as_of_date": "2025-05-31",
+                    "bai_type_code": "060"
+                },
+                {
+                    "balance_type": "CURRENT_LEDGER",
+                    "balance_amount": 887007.17,
+                    "as_of_date": "2025-05-31",
+                    "bai_type_code": "030"
+                }
+            ]
+        }
+    ]
+}
